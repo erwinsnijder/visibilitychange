@@ -19,3 +19,18 @@ function handleVisibilityChange() {
         videoElement.play();
     }
     }
+
+    if (typeof document.addEventListener === "undefined" || hidden === undefined) {
+        console.log("This  demo requires a browser, such as Google Chrome or Firefox, that supports the Page Visibility API.");
+    } else
+    { 
+        document.addEventListener(visibilityChange, handleVisibilityChange, false);
+        videoElement.addEventListener("pause", function(){
+            document.title = "paused";
+        }, false);
+
+        videoElement.addEventListener("play", function() {
+            document.title = "playing";
+        }, false);
+
+    }
