@@ -9,3 +9,13 @@ if (typeof document.hidden !==undefined) {
     hidden = "webkitHidden";
     visibilitychange = "webkitvisibilitychange";
 }
+
+var videoElement = document.getElementById("video");
+
+function handleVisibilityChange() {
+    if (document[hidden]) {
+        videoElement.pause();
+    } else {
+        videoElement.play();
+    }
+    }
